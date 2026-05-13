@@ -125,8 +125,6 @@ Example to test pretrained model with four rate points (RGB; same flags as DCVC-
 python test_video_y_latent_optimized.py --i_frame_model_path ./checkpoints/cvpr2023_image_psnr.pth.tar --p_frame_model_path ./checkpoints/cvpr2023_video_psnr.pth.tar --rate_num 4 --test_config ./dataset_config_example_rgb.json --yuv420 0 --cuda 1 --cuda_device 0,1,2,3 --worker 4 --write_stream 1 --stream_path ./stream --save_decoded_frame 1 --decoded_frame_path ./decoded_frames --output_path output.json --force_intra_period 32 --force_frame_num 96
 ```
 
-If you use this script or DCVC-DC’s code or checkpoints, please cite **both** our ISCAS paper and Li *et al.*, CVPR 2023 (DCVC-DC).
-
 ## Acknowledgement
 
 The implementation is based on **[DCVC-DC](https://github.com/microsoft/DCVC/tree/main/DCVC-family/DCVC-DC)** (Microsoft), **[CompressAI](https://github.com/InterDigitalInc/CompressAI)**, and **[PyTorchVideoCompression](https://github.com/Zhengxuezhao/PyTorchVideoCompression)**.
