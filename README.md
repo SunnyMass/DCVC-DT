@@ -126,7 +126,7 @@ AVS-EEM (AVS End-to-End Intelligent Video Coding Exploration Model) is a standar
 Our online learning enhancement technique has also been proposed and evaluated as an optional encoder-side configuration within the AVS-EEM platform. By integrating Stochastic Gumbel Annealing (SGA-Q), optimizing the YUV Loss ratio to 1:1:1 to prevent chroma degradation, and utilizing frame-level dynamic RD adjustments, the encoder adapts effectively to test sequence characteristics. Operating strictly as a pure encoder-side optimization, this approach guarantees zero additional overhead to the decoding time. When benchmarked against the EEM v8.1 platform, our method achieves comprehensive rate-distortion performance gains of **-3.36% (Y)**, **-7.17% (U)**, and **-6.68% (V)**.
 
 <div align="center">
-<img src="assets/avs_eem_performance.png" alt="AVS-EEM Integration Performance" width="80%" />
+<img src="assets/avs_eem_performance.png" alt="AVS-EEM Integration Performance" width="50%" />
 </div>
 
 ## Pretrained models
