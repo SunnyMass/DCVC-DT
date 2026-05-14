@@ -8,7 +8,7 @@ This repository adds **`test_video_y_latent_optimized.py`** only: copy it into t
 
 # TODO
 We will gradually open-source the project components in the following order:
-- [X] Release the binaries for HEVC **Class C and D**.
+- [ ] Release the binaries for HEVC **Class C and D**.
 - [ ] Release the binaries for HEVC **Class B** and other **1080p** sequences.
 - [ ] Release the **training code**.
 
