@@ -8,8 +8,8 @@ This repository adds **`test_video_y_latent_optimized.py`** only: copy it into t
 
 # TODO
 We will gradually open-source the project components in the following order:
-- [ ] Release the binaries for HEVC **Class C and D**.
-- [ ] Release the binaries for HEVC **Class B** and other **1080p** sequences.
+- [ ] Release the binaries for HEVC **Class C and D**. (Note: You can directly use the DCVC-DC decoder to decode these bitstreams and compare the performance.)
+- [ ] Release the binaries for HEVC **Class B** and other **1080p** sequences. (Note: You can directly use the DCVC-DC decoder to decode these bitstreams and compare the performance.)
 - [ ] Release the **training code**.
 
 ## Introduction
