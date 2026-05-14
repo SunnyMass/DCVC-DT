@@ -6,6 +6,12 @@ Environment setup, dataset layout, optional C++ bitstream build, and **pretraine
 
 This repository adds **`test_video_y_latent_optimized.py`** only: copy it into the **DCVC-DC project root** (next to `test_video.py`).
 
+# TODO
+We will gradually open-source the project components in the following order:
+- [X] Release the binaries for HEVC **Class C and D**.
+- [ ] Release the binaries for HEVC **Class B** and other **1080p** sequences.
+- [ ] Release the **training code**.
+
 ## Introduction
 
 Neural codecs are sensitive when test content differs from the training distribution; RD performance and generalization can suffer. DCVC-DT addresses this on top of the DCVC-DC backbone without retraining.
@@ -113,13 +119,25 @@ Where **error propagation** is visible, reconstruction and bitrate use tend to b
 <img src="assets/quality_fluctuation.png" alt="PSNR and BPP fluctuation on BasketballPass (HEVC Class D)" width="50%" />
 </div>
 
+## AVS-EEM Integration Performance:
+
+AVS-EEM (AVS End-to-End Intelligent Video Coding Exploration Model) is a standardization project launched by the AVS video coding working group, aimed at designing and exploring deployable end-to-end intelligent video coding systems under strict computational complexity constraints. 
+
+Our online learning enhancement technique has also been proposed and evaluated as an optional encoder-side configuration within the AVS-EEM platform. By integrating Stochastic Gumbel Annealing (SGA-Q), optimizing the YUV Loss ratio to 1:1:1 to prevent chroma degradation, and utilizing frame-level dynamic RD adjustments, the encoder adapts effectively to test sequence characteristics. Operating strictly as a pure encoder-side optimization, this approach guarantees zero additional overhead to the decoding time. When benchmarked against the EEM v8.1 platform, our method achieves comprehensive rate-distortion performance gains of **-3.36% (Y)**, **-7.17% (U)**, and **-6.68% (V)**.
+
+<div align="center">
+<img src="assets/avs_eem_performance.png" alt="AVS-EEM Integration Performance" width="80%" />
+</div>
+
 ## Pretrained models
 
 Identical to **DCVC-DC**: download the official pretrained models into `./checkpoints`, or use the download script in that folder.
 
 ## Test the models
 
-Example to test pretrained model with four rate points (RGB; same flags as DCVC-DC’s `test_video.py`, but run **`test_video_y_latent_optimized.py`** from the DCVC-DC root after copying this file):
+Before running the evaluation, please ensure that you have completed the environment setup according to the **Prerequisites** section of **[DCVC-DC](https://github.com/microsoft/DCVC/tree/main/DCVC-family/DCVC-DC)** and organized your test sequences in **RGB format** (PNG files) as described in their **Test dataset** guidelines.
+
+To test the pretrained model with four rate points (using RGB data organization), first copy the `test_video_y_latent_optimized.py` file into the DCVC-DC project root directory, then run the following command:
 
 ```text
 python test_video_y_latent_optimized.py --i_frame_model_path ./checkpoints/cvpr2023_image_psnr.pth.tar --p_frame_model_path ./checkpoints/cvpr2023_video_psnr.pth.tar --rate_num 4 --test_config ./dataset_config_example_rgb.json --yuv420 0 --cuda 1 --cuda_device 0,1,2,3 --worker 4 --write_stream 1 --stream_path ./stream --save_decoded_frame 1 --decoded_frame_path ./decoded_frames --output_path output.json --force_intra_period 32 --force_frame_num 96
