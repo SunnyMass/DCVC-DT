@@ -131,7 +131,7 @@ The implementation is based on **[DCVC-DC](https://github.com/microsoft/DCVC/tre
 
 ## Citation
 
-If you find this work useful for your research, please cite our ISCAS paper (when available) and the DCVC-DC reference:
+If you find this work useful for your research, please cite our ISCAS paper (or arXiv) and the DCVC-DC reference:
 
 ```bibtex
 @inproceedings{li2023neural,
@@ -140,5 +140,15 @@ If you find this work useful for your research, please cite our ISCAS paper (whe
   booktitle = {{IEEE/CVF} Conference on Computer Vision and Pattern Recognition,
                {CVPR} 2023, Vancouver, Canada, June 18--22, 2023},
   year      = {2023}
+}
+
+@misc{zhang2026neuralvideocompressiondomain,
+      title={Neural Video Compression with Domain Transfer}, 
+      author={Tiange Zhang and Rongqun Lin and Xiandong Meng and Haofeng Wang and Xing Tian and Qi Zhang and Siwei Ma},
+      year={2026},
+      eprint={2605.13476},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.13476}, 
 }
 ```
