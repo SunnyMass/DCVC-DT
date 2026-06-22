@@ -6,11 +6,10 @@ Environment setup, dataset layout, optional C++ bitstream build, and **pretraine
 
 This repository adds **`test_video_y_latent_optimized.py`** only: copy it into the **DCVC-DC project root** (next to `test_video.py`).
 
-# TODO
-We will gradually open-source the project components in the following order:
-- [X] Release the binaries for HEVC **Class C and D**. (Note: You can directly use the DCVC-DC decoder to decode these bitstreams and compare the performance.)
-- [ ] Release the binaries for HEVC **Class B** and other **1080p** sequences. (Note: You can directly use the DCVC-DC decoder to decode these bitstreams and compare the performance.)
-- [ ] Release the **training code**.
+# Update (Training code Released!)
+We have fully open-sourced the training code and partial binaries to support the community and promote academic research.
+- [x] **Training Code:** Released! The DCVC-DC decoder currently lacks cross-platform support, and decoding may fail across different devices even on identical hardware models. To address this, we provide the full training code to facilitate your own training and evaluation.
+- [x] **Binaries for HEVC Class C and D:** Released. You can use the DCVC-DC decoder to decode these bitstreams. Please be mindful of the cross-device limitations mentioned above.
 
 ## Introduction
 
@@ -149,24 +148,17 @@ The implementation is based on **[DCVC-DC](https://github.com/microsoft/DCVC/tre
 
 ## Citation
 
-If you find this work useful for your research, please cite our ISCAS paper (or arXiv) and the DCVC-DC reference:
+If you find this work useful for your research, please cite our ISCAS paper:
 
 ```bibtex
-@inproceedings{li2023neural,
-  title     = {Neural Video Compression with Diverse Contexts},
-  author    = {Li, Jiahao and Li, Bin and Lu, Yan},
-  booktitle = {{IEEE/CVF} Conference on Computer Vision and Pattern Recognition,
-               {CVPR} 2023, Vancouver, Canada, June 18--22, 2023},
-  year      = {2023}
-}
-
-@misc{zhang2026neuralvideocompressiondomain,
-      title={Neural Video Compression with Domain Transfer}, 
-      author={Tiange Zhang and Rongqun Lin and Xiandong Meng and Haofeng Wang and Xing Tian and Qi Zhang and Siwei Ma},
-      year={2026},
-      eprint={2605.13476},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2605.13476}, 
-}
+@INPROCEEDINGS{11561917,
+  author={Zhang, Tiange and Lin, Rongqun and Meng, Xiandong and Wang, Haofeng and Tian, Xing and Zhang, Qi and Ma, Siwei},
+  booktitle={2026 IEEE International Symposium on Circuits and Systems (ISCAS)}, 
+  title={Neural Video Compression with Domain Transfer}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1551-1555},
+  keywords={Videos;Printing;Video compression;Conferences;Modeling;Optimization;Rate-distortion;Learning (artificial intelligence);Bit rate;Codes;neural video compression;domain transfer;online learning;rate-distortion optimization},
+  doi={10.1109/ISCAS66217.2026.11561917}}
 ```
