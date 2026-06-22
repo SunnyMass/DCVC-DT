@@ -1,6 +1,6 @@
 # DCVC-DT
 
-Official code for the ISCAS 2026 paper *Neural Video Compression with Domain Transfer*.
+Official code for the ISCAS 2026 **Oral paper** *Neural Video Compression with Domain Transfer*.
 
 Environment setup, dataset layout, optional C++ bitstream build, and **pretrained checkpoints** are the **same as [DCVC-DC](https://github.com/microsoft/DCVC/tree/main/DCVC-family/DCVC-DC)**: follow the upstream README, place checkpoints under `./checkpoints`, then use the commands below.
 
