@@ -8,7 +8,7 @@ This repository adds **`test_video_y_latent_optimized.py`** only: copy it into t
 
 ## Update (Training code Released!)
 We have fully open-sourced the training code and partial binaries to support the community and promote academic research.
-- [x] **Training Code:** Released! The DCVC-DC decoder currently lacks cross-platform support, and decoding may fail across different devices even on identical hardware models. To address this, we provide the full training code to facilitate your own training and evaluation.
+- [x] **Training Code:** Released! See the `test_video_y_latent_optimized.py` file, which **supports not only the RGB format mentioned in the paper but also optimizations specifically tailored for YUV**. The DCVC-DC decoder currently lacks cross-platform support, and decoding may fail across different devices even on identical hardware models. To address this, we provide the full training code to facilitate your own training and evaluation.
 - [x] **Binaries for HEVC Class C and D:** Released. You can use the DCVC-DC decoder to decode these bitstreams. Please be mindful of the cross-device limitations mentioned above.
 
 ## Introduction
