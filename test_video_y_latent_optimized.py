@@ -398,10 +398,10 @@ def optimize_latent(model,x, dpb, q_in_ckpt, q_index, flag_yuv, frame_idx, itera
                 v = x[:,2, :, :].unsqueeze(0)
                 v =  torch.nn.functional.interpolate(v, size=[int(v.size(2) / 2), int(v.size(3) / 2)], mode='bilinear')
   
-              
-                loss = 2/4* lmbda * (1-mse(x_hat[:, 0:1, :, :], x[:, 0:1, :, :])) +\
-                       1/4 * lmbda * (1-mse(x_hat[:, 1:2, :, :], x[:, 1:2, :, :])) + \
-                       1/4 * lmbda * (1-mse(x_hat[:, 2:3, :, :], x[:, 2:3, :, :])) + bpp
+                            
+                     
+                loss = 2/4* lmbda * mse(x_hat[:, 0, :, :], x[:,0, :, :]) + \
+                       1/4* lmbda * mse(u_hat, u) +1/4* lmbda * mse(v_hat, v) + bpp
             else:
                 loss = lmbda * mse(x_hat, x) + bpp * bppweight
   
